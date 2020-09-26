@@ -1,0 +1,19 @@
+//Generate 11 box-shadow
+@mixin generate-box-shadow() {
+  $i: 0;
+  $degres: 10 + $i;
+  $color: rgba(0, 0, 0, 0.16);
+  $a: 2;
+  $b: 3;
+  $c: 5;
+  @while $i <= $degres {
+    $i: $i + 1;
+    $a: $i + $a/2;
+    $b: $b + $i;
+    --box#{$i}: #{1px ($a) +"px" $b + "px" $c + "px" $color};
+  }
+}
+//Put variables in root pseudo-class
+:root {
+  @include generate-box-shadow();
+}

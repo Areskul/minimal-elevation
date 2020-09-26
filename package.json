@@ -1,0 +1,9 @@
+{
+  "name": "@areskul/palette",
+  "version": "1.0.2",
+  "private": false,
+  "main": "palette.scss",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}
