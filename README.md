@@ -1,4 +1,4 @@
-# palette
+# elevation
 
 **A very small css utility to generate color themes**
 
@@ -48,41 +48,11 @@ Get theme [here](https://github.com/Areskul/mixins#Mixins)
 ## Set up/ Customize your themes
 
 Let's say you've made a variable.css file like below
-Import palette.scss functions in your variable.scss
+Import elevation.scss functions in your main.js
 
 variable.css
 ```scss
-@use "../core/palette/palette.scss" as palette;
-
-// Color base for light theme
-$name: "light";
-$colors: (
-  "fg": #eeeeee,
-  "bg": #ffffff,
-  "primary": #ca5b89,
-  "secondary": #fa709a,
-  "ternary": #000000,
-  "success": #7ccc13,
-  "info": #18d1ff,
-  "warning": #fee140,
-  "danger": #cf0000,
-);
-@include palette.generate-theme($name, $colors);
-
-// Color base for dark theme
-$name: "dark";
-$colors: (
-  "fg": #1f1e1e,
-  "bg": #161313,
-  "primary": #5e6fce,
-  "secondary": #5e09cc,
-  "ternary": #ffffff,
-  "success": #35b91a,
-  "info": #37c1eb,
-  "warning": #da9a11,
-  "danger": #ec0b0b,
-);
-@include palette.generate-theme($name, $colors);
+@use "../core/palette/.scss" as palette;
 ```
 
 ## Use it in your project
@@ -94,17 +64,13 @@ main.ts
 ```javascript
 import "@/scss/variable.scss"
 ```
-or
-```javascript
-import "./scss/variable.scss"
-```
 
 With the mixins (more helpers than mixins) that comes with
 
-main.ts
+component.vue
 ```javascript
-import { color } from "core/mixins/styles";
+import { elevation } from "core/mixins/styles";
 export default {
-  mixins: [color],
+  mixins: [elevation],
 };
 ```
